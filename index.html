@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nostra</title>
+     <!--Font Awesome cdn link-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <!--Tailwind CSS CDN Link-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!--Google Font Stylesheet-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Gabarito:wght@400..900&display=swap" rel="stylesheet">
+
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+    </style>
+</head>
+<body>
+    <!--Banner section-->
+    <section id="banner" class="flex justify-center gap-20 p-2 bg-black text-white md:text-xl">
+        <h1>Sign up and <strong>GET 20% OFF</strong> for your first order</h1>
+        <p id="close" class="cursor-pointer">X</p>
+    </section>
+    <!--responsive navbar-->
+    <nav class="flex items-center justify-between p-3 mb-2 md:px-10 sticky top-0 bg-white z-50">
+        <h1 class="text-2xl font-bold">Nostra</h1>
+
+        <svg id="menuicon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+            stroke="currentColor" class="w-6 h-6 md:hidden">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+        </svg>
+        <ul class="gap-10 mt-3 text-black text-lg hidden md:flex">
+            <li>
+                <a class="hover:underline hover:text-black" href="index.html">Home</a>
+            </li>
+            <li>
+                <a class="hover:underline hover:text-black" href="#new-arrivals">New Arrivals</a>
+            </li>
+            <li>
+                <a class="hover:underline hover:text-black" href="#most-wanted">Most Wanted</a>
+            </li>
+            <li>
+                <a class="hover:underline hover:text-black" href="collections.html">Collections</a>
+            </li>
+            <li>
+                <a class="hover:underline hover:text-black" href="contact.html">Contact Us</a>
+            </li>
+        </ul>
+    </nav>
+    <!--mobile navbar-->
+    <section id="sidenav" class="bg-[#1D232C] fixed z-50 top-0 transition-all duration-1000" style="width: 50%; height: 100vh; left:-50%;">
+        <div class="text-right p-5">
+            <p id="closenav" class="inline cursor-pointer text-white">X</p>
+        </div>
+        <ul class="flex flex-col gap-10 items-center text-base text-white">
+            <li>
+                <a class="hover:underline hover:text-white" href="#home">Home</a>
+            </li>
+            <li>
+                <a class="hover:underline hover:text-white" href="#new-arrivals">New Arrivals</a>
+            </li>
+            <li>
+                <a class="hover:underline hover:text-white" href="#most-wanted">Most Wanted</a>
+            </li>
+            <li>
+                <a class="hover:underline hover:text-white" href="collections.html">Collections</a>
+            </li>
+            <li>
+                <a class="hover:underline hover:text-white" href="contact.html">Contact Us</a>
+            </li>
+        </ul>
+    </section>
+    <!--Slider-->
+    <section>
+        <div class="relative overflow-hidden h-[40vh] md:h-[60vh]">
+            <!--static text block(responsive)-->
+            <div class="absolute top-0 left-0 h-full w-full flex z-10">
+                <div class="my-auto w-full text-center px-4">
+                    <h2 class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight">
+                        Level up your style with our
+                    </h2>
+                    <h4 class="text-base sm:text-lg md:text-xl text-white mt-2">
+                        Summer Collections
+                    </h4>
+                    <button
+                        class="cursor-pointer mt-4 bg-white text-black text-sm sm:text-base px-2 sm:py-3 rounded hover:bg-gray-200 transition-z-10">
+                    
+                        Shop Now <i class="fa-solid fa-arrow-right ml-2"></i>
+                    </button>
+                </div>
+            </div>
+            <!--slider image background-->
+            <ul id="slider" class="flex w-full h-full transition delay-150 duration-1000 ease-in-out">
+                <li class="w-full flex-shrink-0">
+                    <img class="w-full h-full object-cover rounded-lg " src="./images/slider-one.jpg">
+                </li>
+                 <li class="w-full flex-shrink-0">
+                    <img class="w-full h-full object-cover rounded-lg" src="./images/slider-one.jpg" alt="">
+                </li>
+                <li class="w-full flex-shrink-0">
+                    <img class="w-full h-full object-cover rounded-lg" src="./images/slider-one.jpg" alt="">
+                </li>
+            </ul>
+            <!--arrow-->
+            <div class="absolute px-5 md:px-20 flex h-full w-full top-0 left-0 z-20">
+                <div class="my-auto w-full flex justify-between">
+                    <button onclick="prev()" class="bg-white p-3 rounded-full bg-opacity-80 shadow-lg">
+                        <!--left arrow-->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+                        </svg>
+                    </button>
+                    <button onclick="next()" class="bg-white p-3 rounded-full bg-opacity-80 shadow-lg">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                            stroke="currentColor" class="size-6">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+                        </svg>
+                    </button>
+                </div>
+            </div>
+    </section>
+    <!--Brands-->
+    <section class="p-3 mt-8">
+        <h1 class="text-2xl font-bold mb-5">Brands</h1>
+        <div class="flex justify-between align-center md:px-2">
+            <div style="display:flex; flex-direction:column; align-items:center;">
+                <img src="./images/brand-p1.png" width="50px" height="50px">
+                <p class="md:text-2xl">Behance</p>
+            </div>
+        <div style="display:flex; flex-direction:column; align-items:center;">
+            <img src="./images/brand-p8.png" width="50px" height="50px">
+            <p class="md:text-2xl">H&M</p>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="./images/brand-p3.png" width="50px" height="50px">
+                <p class="md:text-2xl">Simple</p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="./images/brand-p7.png" width="50px" height="50px">
+                <p class="md:text-2xl">Black Angel</p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="./images/brand-p5.png" width="50px" height="50px">
+                <p class="md:text-2xl">Twitch</p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="./images/brand-p6.png" width="50px" height="50px">
+                <p class="md:text-2xl">Nike</p>
+            </div>
+            <div style="display: flex; flex-direction: column; align-items: center;">
+                <img src="./images/brand-p4.png" width="50px" height="50px">
+                <p class="md:text-2xl">Leaves</p>
+            </div>
+     </div>
+</section>
+<!--customer experience-->
+<section class="flex flex-wrap md:flex-nowrap justify-between mt-12 px-5 gap-12">
+    <div class="flex flex-col gap-1">
+        <h1 class="text-xl md:text-3xl font-bold">We Provide Best</h1>
+         <h1 class="text-xl md:text-3xl font-bold">Customer Experiences</h1>
+    </div>
+        <p class="md:text-2xl mt-4">|| We ensure that our customer have the best shopping experience</p>
+</section>
+<!--positives-->
+<section class="flex flex-wrap md:flex-nowrap justify-between px-6 mt-12 gap-5">
+    <div class="w-[40%] sm:w-[45%] md:w-[200px] lg:w-[250px]" style= "color:white;  background-color:black; padding:10px;">
+        <i style="font-size:3vw; margin-bottom:10px;" class="fa-regular fa-circle-check"></i>
+        <h4 class="font-bold">Orginal Products</h4>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+    </div>
+    <div class="w-[40%] sm:w-[45%] md:w-[200px] lg:w-[250px]" style= "color:white;  background-color:black; padding: 10px;">
+            <i style="font-size: 3vw;margin-bottom: 10px;" class="fa-regular fa-face-smile"></i>
+            <h4 class="font-bold">Satisfaction Guarantee</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="w-[40%] sm:w-[45%] md:w-[200px] lg:w-[250px]"  style="color:white;  background-color:black; padding: 10px;">
+            <i style="font-size: 3vw;margin-bottom: 10px;" class="fa-solid fa-broom"></i>
+            <h4 class="font-bold">New Arrival Everyday</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+        <div class="w-[40%] sm:w-[45%] md:w-[200px] lg:w-[250px]" style= "color:white;  background-color:black; padding:10px;">
+            <i style="font-size: 3vw;margin-bottom: 10px;" class="fa-solid fa-truck-fast"></i>
+            <h4 class="font-bold">Fast & Free Shipping</h4>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+</section>
+<!--New arrivals-->
+<section id="new-arrival">
+        <h1 class="mt-12 mb-5 px-5 font-bold text-2xl">New Arrivals</h1>
+        <div class="flex flex-wrap md:flex-nowrap justify-between px-5 md:flex-shrink-0 gap-10">
+            <div class="w-[40%] sm:w-[35%] md:w-[200px] lg:w-[250px] relative transform transition duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-105">
+                <img src="./images/New-p1.jpg" class="w-full rounded-[10px] brightness-60">
+                <button
+                    class="absolute bg-white text-black text-sm md:text-sm lg:text-lg rounded-md top-1/2 left-1/4 px-2 py-1 md:py-2">
+                    Shop Now <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+            <div class="w-[40%] sm:w-[35%] md:w-[200px] lg:w-[250px] relative transform transition duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-105">
+                <img src="./images/New-p2.jpg" class="w-full rounded-[10px] brightness-60">
+                <button
+                    class="absolute bg-white text-black text-sm md:text-sm lg:text-lg rounded-md top-1/2 left-1/4 px-2 py-1 md:py-2">
+                    Shop Now <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+            <div class="w-[40%] sm:w-[35%] md:w-[200px] lg:w-[250px] relative transform transition duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-105">
+                <img src="./images/New-p3.jpg" class="w-full rounded-[10px] brightness-60">
+                <button
+                    class="absolute bg-white text-black text-sm md:text-sm lg:text-lg rounded-md top-1/2 left-1/4 px-2 py-1 md:py-2">
+                    Shop Now <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+            <div class="w-[40%] sm:w-[35%] md:w-[200px] lg:w-[250px] relative transform transition duration-300 hover:shadow-xl hover:-translate-y-2 hover:scale-105">
+                <img src="./images/New-p4.jpg" class="w-full rounded-[10px] brightness-60">
+                <button
+                    class="absolute bg-white text-black text-sm md:text-sm lg:text-lg rounded-md top-1/2 left-1/4 px-2 py-1 md:py-2">
+                    Shop Now <i class="fa-solid fa-arrow-right ml-2"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+    <!--Most Wanted-->
+     <section id="most-wanted">
+        <h1 class="mt-12 mb-5 px-5 font-bold text-2xl">Most Wanted</h1>
+        <div class="flex flex-wrap md:flex-nowrap justify-between px-5 md:flex-shrink-0 gap-10">
+            <div class="w-[40%] sm:w-[35%] md:w-[200px] lg:w-[250px] relative hover:shadow-xl transform hover:-translate-y-4 transition duration-300">
+                <img src="./images/MW-p1.jpg" class="w-full rounded-[10px]">
+                <button
+                    class="absolute bg-red-600 text-white md:text-lg lg:text-2xl px-3 py-1 rounded-md top-0">sale</button>
+                <button class="absolute md:text-xl lg:text-3xl right-0 bottom-0 hover:bg-black rounded-full p-1">🤍</button>
+            </div>
+            <div class="w-[40%] sm:w-[35%] md:w-[200px] lg:w-[250px] relative hover:shadow-xl transform hover:-translate-y-4 transition duration-300">
+                <img src="./images/MW-p2.jpg" class="w-full rounded-[10px]">
+                <button
+                    class="absolute bg-red-600 text-white md:text-lg lg:text-2xl px-3 py-1 rounded-md top-0">sale</button>
+                <button class="absolute md:text-xl lg:text-3xl right-0 bottom-0 hover:bg-black rounded-full p-1">🤍</button>
+            </div>
+            <div class="w-[40%] sm:w-[35%] md:w-[200px] lg:w-[250px] relative hover:shadow-xl transform hover:-translate-y-4 transition duration-300">
+                <img src="./images/MW-p3.jpg" class="w-full rounded-[10px]">
+                <button
+                    class="absolute bg-red-600 text-white md:text-lg lg:text-2xl px-3 py-1 rounded-md top-0">sale</button>
+                <button class="absolute md:text-xl lg:text-3xl right-0 bottom-0 hover:bg-black rounded-full p-1">🤍</button>
+            </div>
+            <div class="w-[40%] sm:w-[35%] md:w-[200px] lg:w-[250px] relative hover:shadow-xl transform hover:-translate-y-4 transition duration-300">
+                <img src="./images/MW-p4.jpg" class="w-full rounded-[10px]">
+                <button
+                    class="absolute bg-red-600 text-white md:text-lg lg:text-2xl px-3 py-1 rounded-md top-0">sale</button>
+                <button class="absolute md:text-xl lg:text-3xl right-0 bottom-0 hover:bg-black rounded-full p-1">🤍</button>
+            </div>
+        </div>
+    </section>
+    <!--Offer-->
+    <section class="flex flex-col md:flex-row bg-[#1D232C] justify-center items-center  px-5 py-2 mt-12 ml-5 md:gap-10">
+        <!-- Image Section -->
+        <div class="w-full md:w-1/2 p-4">
+            <img src="./images/offer-pic.jpg" alt="Offer" class="w-full h-auto object-cover rounded-md">
+        </div>
+        <!-- Content Section -->
+        <div class="w-full md:w-1/2 p-6 flex flex-col justify-center items-start md:gap-3">
+            <h1 class="text-white text-3xl md:text-5xl font-bold mb-2">Limited Offer</h1>
+            <p class="text-white text-xl md:text-2xl font-bold mb-4">35% OFF on this for the first 30 Customers</p>
+            <button class="bg-white px-4 py-2 text-sm md:text-xl rounded-md hover:bg-gray-100 transition">
+                Shop Now
+                <i class="fa-solid fa-arrow-right ml-2"></i>
+            </button>
+        </div>
+        </section>
+        <!--News Letter-->
+        <section class="text-center mt-12">
+            <h1 class="text-3xl md:text-5xl font-bold mt-6 text-center">Subscribe to our Newsletter</h1>
+            <p class="text-lg md:text-3xl">Signup for our email newsletter to get exclusive discounts, updates, and more</p>
+            <input type="text" class="border border-black p-2 m-3" style="width: 80%;">
+        <br>
+        <button class="bg-[#1D232C] text-white text-sm md:text-lg font-medium rounded-lg p-3 m-1 mb-5">Subscribe
+            <i class="fa-solid fa-arrow-right ml-2"></i>
+        </button>
+        </section>
+        <!--Footer-->
+        <section class="bg-[#1D232C] p-10 flex flex-col gap-6 mt-3">
+        <h1 class="text-3xl md:text-5xl font-bold text-white">Nostra</h1>
+        <p class="text-xl md:text-3xl text-white">The Standard chunk of Lorem ipsum used since the 1500s is reproduced
+            below for those intrest</p>
+        <div class="flex gap-10 ml-5">
+            <img class="w-8 h-8 md:w-12 md:h-12 cursor-pointer transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-110"
+                src="./images/ft-p1.png" alt="Media">
+            <img class="w-8 h-8 md:w-12 md:h-12 cursor-pointer transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-110"
+                src="./images/ft-p2.png" alt="Media">
+            <img class="w-8 h-8 md:w-12 md:h-12 cursor-pointer transition delay-150 duration-500 ease-in-out hover:-translate-y-1 hover:scale-110"
+                src="./images/ft-p3.png" alt="Media">
+        </div>
+        <p class="text-lg text-white">@2023 Nostra.com</p>
+    </section>
+
+    <script src="./script.js"></script>
+
+</body>
+</html>
